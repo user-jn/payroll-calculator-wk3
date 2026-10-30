@@ -27,18 +27,23 @@ public class Main {
                                 double payRate = Double.parseDouble(tokens[3]);
 
                                 // now we create the new employee object
-                                Employee employee
+                                Employee employee = new Employee(employeeID, name, hoursWorked, payRate);
 
-
+                                // now display employee information
+                                System.out.printf("ID: %d | Name: %s | Gross Pay: $%.2f%n",
+                                        employee.getEmployeeID(),
+                                        employee.getName(),
+                                        employee.getGrossPay());
 
 
                         }
 
 
+                                //close file
+                        bufReader.close();
 
-
-
-
-
+                } catch (IOException e) {
+                        System.out.println("Error reading file: " + e.getMessage());
+                }
         }
 }
